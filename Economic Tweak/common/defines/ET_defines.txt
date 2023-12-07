@@ -1,0 +1,30 @@
+NEconomy = {
+    MIN_GOODS_PRICE = 0.1						# A good cannot have a lower base price than this                                                                                                      
+    PRICE_RANGE = 0.9							# min price of a good is base * (1 - PRICE_RANGE), Max price is base * (1 + PRICE_RANGE), PRICE_RANGE is locked to [0-1]                                
+    BUY_SELL_DIFF_AT_MAX_FACTOR = 3  		        # the difference between buy/consumption and sell/production at min/max pricing, e.g. if set to 4 then if buy orders are 4x sell orders price is maxed   
+	
+    GOODS_SHORTAGE_PENALTY_MAX = 1			    # Goods shortage penalty can't be higher than this                                                                                                       
+	   
+    MAX_WAGE_STEP_CHANGE = 10.0					    # Wage rates can change at most this much each week                                                         
+	
+    COUNTRY_MIN_CREDIT_BASE = 0			    # Added to the total Building Cash Reserves to determine credit limit (base)	                                                                         
+    COUNTRY_MIN_CREDIT_SCALED = 1 			    # Added to the total Building Cash Reserves to determine credit limit (multiplied by GDP)	                                                             
+
+	GOLD_RESERVE_LIMIT_FACTOR = 1.0				    # The base factor of annual GDP that should be provided as a Gold Reserve                                                                                
+	GOLD_RESERVE_RETURNS_FACTOR = 0				# How rapidly diminishing returns will cause gold reserves to drop off after the limit has been reached (higher value increases penalty)
+	
+    TRADE_ROUTE_BUREAUCRACY_COST = 10					# The cost in BUR per trade route
+	TRADE_ROUTE_START_LEVEL = 1							# All new trade routes start at this level
+	TRADE_ROUTE_MIN_TOTAL_IMPORTS = 50					# This amount of a good can always be imported to a market even if there is no demand
+	TRADE_ROUTE_DEFAULT_GOODS_QUANTITY = 50				# Base quantity traded from trade routes, if not otherwise specified in goods type
+
+	RETOOLING_WEEKS = 13							# How long it takes for a building to get back up to full production after switching a production method
+	
+	REINVESTMENT_FALLOFF_START = 9999999999999				# Below this amount of GDP, increase reinvestment multiplier on a linear scale up to REINVESTMENT_EFFICIENCY_MAX at 0
+	REINVESTMENT_FALLOFF_END = 9999999999999999				# Above REINVESTMENT_FALLOFF_START but below this, apply minimum reinvestment multiplier on a linear scale down to REINVESTMENT_EFFICIENCY_MIN, above this always use REINVESTMENT_EFFICIENCY_MIN
+
+	DECLARE_BANKRUPTCY_RADICALIZATION_SHARES_FACTOR = 0.25 # For each per-pop shares in their building, radicalize this percentage of a pop on declaring bankruptcy	
+	
+	BUILDING_PROFIT_TARGET_TO_RAISE_WAGES = 0.2		# Required profit margin to consider raising wages for SoL or employment reasons, with BUILDING_WEEKS_BETWEEN_PAY_CHANGES weeks cooldown
+	BUILDING_PROFIT_TARGET_TO_LOWER_WAGES = 0.05	# If profit margin is this or below, consider lowering wages for SoL or employment reasons, with BUILDING_WEEKS_BETWEEN_PAY_CHANGES weeks cooldown
+}
